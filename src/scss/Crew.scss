@@ -1,0 +1,17 @@
+main.crew {
+  background: url(../assets/background/background-crew-desktop.jpg) right /
+    cover no-repeat;
+}
+
+@media (max-width: 768px) {
+  main.crew {
+    background: url(../assets/background/background-crew-tablet.jpg) right /
+      cover no-repeat;
+  }
+}
+@media (max-width: 375px) {
+  main.crew {
+    background: url(../assets/background/background-crew-mobile.jpg) right /
+      cover no-repeat;
+  }
+}

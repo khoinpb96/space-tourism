@@ -1,0 +1,17 @@
+main.tech {
+  background: url(../assets/background/background-technology-desktop.jpg) right /
+    cover no-repeat;
+}
+
+@media (max-width: 768px) {
+  main.tech {
+    background: url(../assets/background/background-technology-tablet.jpg) right /
+      cover no-repeat;
+  }
+}
+@media (max-width: 375px) {
+  main.tech {
+    background: url(../assets/background/background-destination-mobile.jpg)
+      right / cover no-repeat;
+  }
+}

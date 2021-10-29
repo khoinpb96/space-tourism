@@ -1,0 +1,60 @@
+@import "../scss/var";
+
+.home-page {
+  .welcome-content {
+    position: absolute;
+    width: 450px;
+    left: 165px;
+    bottom: 130px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    p {
+      line-height: 32px;
+    }
+  }
+
+  .cta-button {
+    position: absolute;
+    right: 165px;
+    bottom: 130px;
+
+    width: 274px;
+    height: 274px;
+    background: $white;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    &:hover {
+      box-shadow: 0 0 0 88px rgba(255, 255, 255, 0.1);
+    }
+    h4 {
+      color: $black;
+    }
+  }
+}
+
+main.home {
+  background: url(../assets/background/background-home-desktop.jpg) right /
+    cover no-repeat;
+}
+
+@media (max-width: 768px) {
+  main.home {
+    background: url(../assets/background/background-home-tablet.jpg) right /
+      cover no-repeat;
+  }
+}
+@media (max-width: 375px) {
+  main.home {
+    background: url(../assets/background/background-home-mobile.jpg) right /
+      cover no-repeat;
+  }
+}

@@ -1,0 +1,60 @@
+@import "./var";
+
+header {
+  position: relative;
+  .logo {
+    width: 48px;
+    height: 48px;
+    background: url(../assets/logo.svg);
+    position: relative;
+    margin: 64px 0 0 55px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 112px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      background: $white;
+      opacity: 0.25;
+
+      height: 1px;
+      width: 473px;
+    }
+  }
+  nav {
+    display: flex;
+    gap: 48px;
+    padding: 0 165px 0 124px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(81.5485px);
+
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    a {
+      text-decoration: none;
+      color: unset;
+      padding: 38px 0;
+      transition: 0.3s;
+      border-bottom: 3px solid transparent;
+
+      span {
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      &.active,
+      &.active:hover {
+        border-bottom: 3px solid #fff;
+      }
+
+      &:hover {
+        border-bottom: 3px solid #979797;
+      }
+    }
+  }
+}
