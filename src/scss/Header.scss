@@ -1,20 +1,22 @@
 @import "./var";
 
 header {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+
   .logo {
     width: 48px;
     height: 48px;
     background: url(../assets/logo.svg);
     position: relative;
-    margin: 64px 0 0 55px;
 
     &::after {
       content: "";
       position: absolute;
       left: 112px;
       top: 50%;
-      transform: translateY(-50%);
 
       background: $white;
       opacity: 0.25;
@@ -30,10 +32,8 @@ header {
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(81.5485px);
 
-    position: absolute;
     right: 0;
     top: 50%;
-    transform: translateY(-50%);
 
     a {
       text-decoration: none;
@@ -55,6 +55,44 @@ header {
       &:hover {
         border-bottom: 3px solid #979797;
       }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  header {
+    &.wrapper {
+      padding-left: 38px;
+    }
+    nav {
+      padding: unset;
+      gap: 36px;
+      padding: 0 48px;
+
+      a {
+        font-size: 14px;
+        padding: 38px 0;
+      }
+      span {
+        display: none;
+      }
+    }
+    .logo {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    margin-top: unset;
+    &.wrapper {
+      padding: 24px;
+    }
+    nav {
+      display: none;
     }
   }
 }

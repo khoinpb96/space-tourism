@@ -1,3 +1,24 @@
 $black: #0b0d17;
 $mainColor: #d0d6f9;
 $white: #fff;
+
+@mixin seciton-title {
+  display: flex;
+  gap: 284px;
+
+  h5 {
+    text-transform: uppercase;
+    span {
+      font-weight: bold;
+      margin-right: 28px;
+      opacity: 0.25;
+    }
+  }
+}
+
+@mixin text {
+  color: $mainColor;
+  line-height: 32px;
+
+  min-height: 183px;
+}

@@ -36,11 +36,35 @@ span.nav-text {
   font: 16px "Barlow Condensed", sans-serif;
   letter-spacing: 2.7px;
 }
+p {
+  font-size: 18px;
+  color: $mainColor;
+  line-height: 32px;
+}
 main {
   height: 100vh;
   overflow-x: hidden;
-  transition: 0.3s;
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+.wrapper {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 55px;
+}
+
+@media (max-width: 1024px) {
+  p {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  span.nav-text {
+    font-size: 14px;
+  }
+  .wrapper {
+    padding-left: unset;
   }
 }

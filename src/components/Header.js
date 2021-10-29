@@ -1,9 +1,10 @@
 import "../scss/Header.scss";
 import { NavLink } from "react-router-dom";
+import MobileNavbar from "./MobileNavbar";
 
 export default function Header() {
   return (
-    <header>
+    <header className="wrapper">
       <div className="logo" />
 
       <nav>
@@ -27,6 +28,7 @@ export default function Header() {
           TECHNOLOGY
         </NavLink>
       </nav>
+      <MobileNavbar />
     </header>
   );
 }

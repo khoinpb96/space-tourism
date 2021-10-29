@@ -1,17 +1,164 @@
+@import "./var";
+.crew-wrapper {
+  margin-top: 76px;
+  padding-left: 112px;
+  position: relative;
+
+  .crew__header {
+    @include seciton-title;
+    margin-bottom: 154px;
+  }
+
+  .crew__content {
+    h4 {
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    h3 {
+      text-transform: uppercase;
+      margin: 15px 0 27px 0;
+    }
+
+    p {
+      max-width: 444px;
+    }
+  }
+
+  .crew__navigator {
+    margin-top: 120px;
+    display: flex;
+    gap: 24px;
+    padding-bottom: 94px;
+
+    .dot {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0.17;
+      cursor: pointer;
+      transition: 0.3s;
+      &.active {
+        opacity: 1;
+      }
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .crew__image {
+    width: 500px;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+    transition: 0.3s;
+  }
+}
+
 main.crew {
   background: url(../assets/background/background-crew-desktop.jpg) right /
     cover no-repeat;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   main.crew {
     background: url(../assets/background/background-crew-tablet.jpg) right /
       cover no-repeat;
   }
+  .crew-wrapper {
+    padding-left: 38px;
+    .crew {
+      &__header {
+        h5 {
+          font-size: 20px;
+          margin-bottom: 60px;
+        }
+      }
+
+      &__image {
+        position: unset;
+        width: 450px;
+        height: 500px;
+        margin: 0 auto;
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        h4 {
+          font-size: 24px;
+        }
+        h3 {
+          font-size: 40px;
+        }
+        p {
+          margin: 0 auto;
+        }
+      }
+
+      &__navigator {
+        margin-top: 40px;
+        justify-content: center;
+      }
+    }
+  }
 }
-@media (max-width: 375px) {
+@media (max-width: 768px) {
   main.crew {
     background: url(../assets/background/background-crew-mobile.jpg) right /
       cover no-repeat;
+  }
+
+  .crew-wrapper {
+    padding-left: unset;
+    margin-top: unset;
+    padding: 0 24px;
+
+    .crew {
+      &__header {
+        margin-bottom: unset;
+        justify-content: center;
+        h5 {
+          font-size: 16px;
+          margin-bottom: 32px;
+        }
+      }
+      &__container {
+        display: flex;
+        flex-direction: column;
+      }
+      &__content {
+        order: 2;
+        padding-bottom: 100px;
+
+        h4 {
+          order: 2;
+          font-size: 16px;
+        }
+        h3 {
+          order: 3;
+          font-size: 24px;
+        }
+        p {
+          order: 4;
+        }
+      }
+      &__image {
+        order: 1;
+        width: 100%;
+        height: 240px;
+        border-bottom: 1px solid #383b4b;
+      }
+      &__navigator {
+        order: 1;
+        margin-top: unset;
+        padding: 32px;
+      }
+    }
   }
 }

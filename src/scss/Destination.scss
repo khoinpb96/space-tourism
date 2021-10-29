@@ -1,18 +1,9 @@
 @import "./var";
 .destination {
-  padding: 76px 165px 112px;
+  margin-top: 76px;
+  padding-left: 112px;
   &__header {
-    display: flex;
-    gap: 284px;
-
-    h5 {
-      text-transform: uppercase;
-      span {
-        font-weight: bold;
-        margin-right: 28px;
-        opacity: 0.25;
-      }
-    }
+    @include seciton-title;
   }
 }
 
@@ -20,14 +11,18 @@
   display: grid;
   grid-template-columns: repeat(2, 445px);
   justify-content: space-between;
+  align-items: end;
+
+  margin-bottom: 112px;
 }
 
 .destination__image {
-  width: 100%;
-  height: 100%;
+  width: 445px;
+  height: 445px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  transition: 0.3s;
 }
 
 .destination__content {
@@ -39,8 +34,18 @@
     span {
       text-decoration: none;
       text-transform: uppercase;
-      color: unset;
+      color: $mainColor;
       padding-bottom: 12px;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: 0.3s;
+      &.active {
+        border-bottom: 3px solid $white;
+        color: $white;
+      }
+      &:hover {
+        color: $white;
+      }
     }
   }
   &__detail {
@@ -50,13 +55,8 @@
     }
 
     p {
-      color: $mainColor;
-      line-height: 32px;
-
       padding-bottom: 54px;
       border-bottom: 1px solid #383b4b;
-
-      min-height: 183px;
     }
 
     .row {
@@ -84,15 +84,94 @@ main.dest {
     cover no-repeat;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   main.dest {
     background: url(../assets/background/background-destination-tablet.jpg)
       right / cover no-repeat;
   }
+
+  .destination {
+    padding-left: 38px;
+
+    &__header {
+      h5 {
+        font-size: 20px;
+        margin-bottom: 60px;
+      }
+    }
+
+    &__container {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+    &__image {
+      height: 300px;
+      width: 300px;
+    }
+    &__content {
+      text-align: center;
+
+      &__navigation {
+        justify-content: center;
+      }
+
+      h2 {
+        font-size: 80px;
+      }
+      p {
+        font-size: 16px;
+        max-width: 80%;
+        min-height: 145px;
+        margin: 0 auto;
+        padding-bottom: 50px;
+      }
+    }
+    .row {
+      justify-content: center;
+    }
+  }
 }
-@media (max-width: 375px) {
+@media (max-width: 768px) {
   main.dest {
     background: url(../assets/background/background-destination-mobile.jpg)
       right / cover no-repeat;
+  }
+
+  .destination {
+    padding-left: unset;
+
+    &__header {
+      justify-content: center;
+
+      h5 {
+        font-size: 16px;
+        margin-bottom: 60px;
+      }
+    }
+
+    &__image {
+      width: 170px;
+      height: 170px;
+    }
+
+    &__content {
+      text-align: center;
+
+      &__navigation {
+        justify-content: center;
+      }
+
+      h2 {
+        font-size: 56px;
+        margin: 20px 0 0 0;
+      }
+      p {
+        max-width: 90%;
+      }
+    }
+    .row {
+      flex-direction: column;
+      gap: 32px;
+    }
   }
 }

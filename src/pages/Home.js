@@ -1,11 +1,12 @@
 import "../scss/Home.scss";
 import Header from "../components/Header";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
     <main className="home">
-      <section className="home-page">
-        <Header />
+      <Header />
+      <section className="home-page wrapper">
         <div className="welcome-content">
           <h5>SO, YOU WANT TO TRAVEL TO</h5>
           <h1>SPACE</h1>
@@ -17,7 +18,9 @@ export default function Home() {
           </p>
         </div>
         <div className="cta-button">
-          <h4>EXPLORE</h4>
+          <Link to="/destination">
+            <h4>EXPLORE</h4>
+          </Link>
         </div>
       </section>
     </main>

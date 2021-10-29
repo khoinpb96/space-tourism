@@ -1,11 +1,18 @@
 @import "../scss/var";
 
 .home-page {
+  margin-top: 250px;
+  padding-bottom: 131px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
   .welcome-content {
-    position: absolute;
     width: 450px;
     left: 165px;
     bottom: 130px;
+
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -16,7 +23,6 @@
   }
 
   .cta-button {
-    position: absolute;
     right: 165px;
     bottom: 130px;
 
@@ -24,13 +30,19 @@
     height: 274px;
     background: $white;
     border-radius: 50%;
+    margin-right: 165px;
 
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-
     transition: 0.3s;
+
+    a {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
 
     &:hover {
       box-shadow: 0 0 0 88px rgba(255, 255, 255, 0.1);
@@ -46,15 +58,65 @@ main.home {
     cover no-repeat;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   main.home {
     background: url(../assets/background/background-home-tablet.jpg) right /
       cover no-repeat;
   }
+  .home-page {
+    margin-top: 106px;
+    flex-direction: column;
+    align-items: center;
+
+    .welcome-content {
+      text-align: center;
+      align-items: center;
+
+      h5 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 16px;
+        margin-bottom: 156px;
+      }
+    }
+
+    .cta-button {
+      width: 242px;
+      height: 242px;
+      margin-right: unset;
+      &:hover {
+        box-shadow: 0 0 0 44px rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
 }
-@media (max-width: 375px) {
+
+@media (max-width: 768px) {
   main.home {
     background: url(../assets/background/background-home-mobile.jpg) right /
       cover no-repeat;
+  }
+
+  .home-page {
+    margin-top: 24px;
+    .welcome-content {
+      h5 {
+        font-size: 16px;
+      }
+      h1 {
+        font-size: 80px;
+      }
+      p {
+        font-size: 15px;
+        margin-bottom: 80px;
+        width: 90%;
+      }
+    }
+  }
+
+  .cta-button {
+    width: 150px;
+    height: 150px;
   }
 }

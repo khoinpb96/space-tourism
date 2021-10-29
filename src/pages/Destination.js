@@ -1,16 +1,20 @@
 import { useState } from "react";
 import Header from "../components/Header";
 import "../scss/Destination.scss";
+import europa from "../assets/destination/europa.png";
+import mars from "../assets/destination/mars.png";
+import moon from "../assets/destination/moon.png";
+import titan from "../assets/destination/titan.png";
 
 export default function Destination({ renderData }) {
-  const [data, setData] = useState(renderData[0]);
-  console.log(data);
-  console.log(data.images.png);
+  const images = [europa, mars, moon, titan];
+  const [index, setIndex] = useState(0);
+  const [data, setData] = useState(renderData[index]);
 
   return (
     <main className="dest">
       <Header />
-      <div className="destination">
+      <div className="destination wrapper">
         <div className="destination__header">
           <h5>
             <span>01</span>Pick your destination
@@ -18,22 +22,23 @@ export default function Destination({ renderData }) {
         </div>
 
         <div className="destination__container">
-          <div className="destination__image">
-            <img
-              src={process.env.PUBLIC_URL + data.images.png}
-              alt={data.name}
-            />
-          </div>
+          <div
+            className="destination__image"
+            style={{
+              background: `url(${images[index]}) center bottom / contain no-repeat `,
+            }}
+          />
 
           <div className="destination__content">
             <div className="destination__content__navigation">
               {renderData.map((e, i) => {
                 return (
                   <span
-                    className="nav-text"
+                    className={index === i ? "nav-text active" : "nav-text"}
                     key={e.name}
                     onClick={() => {
                       setData(renderData[i]);
+                      setIndex(i);
                     }}
                   >
                     {e.name}
